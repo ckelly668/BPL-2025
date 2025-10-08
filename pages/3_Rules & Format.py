@@ -32,6 +32,8 @@ def main():
     - It is the responsibility of **both teams to organise and book their own courts** for their scheduled matches.
     - Use the **Playtomic app** or **Let's Go Padel** to book courts and split the payments.
     """)
+
+    # ================= Add Logo  ===========================
     st.sidebar.image('images/padel_logo_2.png', width=300)
 
 if __name__ == "__main__":

@@ -1,44 +1,28 @@
 import streamlit as st
+import os
+import pickle
+from padelLeague import padelLeague
+from aesthetic_tables import create_league_table, create_winners_page
 # from image_loader import render_image
 
+# =========== Streamlit Page Configuration ===========
 st.set_page_config(page_title="Belfast Padel League", 
                    layout="wide",
                    page_icon = ":tennis:",
                    initial_sidebar_state= "expanded")
 
-# st.title("Padel League Table")
-# st.sidebar.success("Select a page above.")
 
-
-
-
-# League Has Been Initialised already now to load the schedule and teams
-import os
-import pickle
-# from datetime import date
-# import pyperclip
-from padelLeague import padelLeague
-# import matplotlib.image as img
-# import matplotlib.pyplot as plt
-# import numpy as np
-# from PIL import Image
-# from pdf2image import convert_from_path
-# from PIL import Image
-
-
-#  === Load Teams and Schedule ===
-# Define Unique Identifiers for the league
-# league_start_date = "2025-10-12"
-# league_init_date = "2025-10-02"
-league_start_date = "2025-10-12"
-league_init_date = "2025-10-07"
-
-# Get the number of weeks completed from user input as an integer
-
+#  =========== Set Number of Weeks Played ==============
 if 'weeks_complete' not in st.session_state:
     st.session_state['weeks_complete'] = 2
 
 weeks_complete = st.session_state['weeks_complete']
+#  ====================================================
+
+#  =========== Load Teams and Schedule ==============
+# Define Unique Identifiers for the league
+league_start_date = "2025-10-12"
+league_init_date = "2025-10-07"
 
 # Define File Names Strings
 unique_folder = f"league_{league_start_date}_init_{league_init_date}"
@@ -59,39 +43,26 @@ with open(unique_schedule_filename, 'rb') as file:
 with open(unique_teams_filename, 'rb') as file:
     teams_and_players = pickle.load(file)
 
-# === Create PadelLeagueTables Class ===
+# =========== Create PadelLeagueTables Class ==============
 League = padelLeague(teams_and_players,
                      startdate=league_start_date, 
                      schedule=schedule)
 
 st.session_state.League = League
 
-# print(type(League.get_players('Smashers')))
-# === Record Matches ===
+
+# ============== Get Match Records Matches ==============
 # This section runs from 'record_games.py' to record the matches for each week.
 exec(open(os.path.join(unique_folder, "record_games.py")).read())
 
-# === Generate League Table ===
-from aesthetic_tables import create_league_table, create_winners_page
-
-fig_league_table = create_league_table(League.build_league_table_from_matrix())
-
-
+# ============== Generate Winners Page  =================
 if weeks_complete == len(schedule):
-    # st.header("🏆 Final League Table 🏆")
-    # st.markdown("Congratulations to the winners!")
     fig_winners = create_winners_page(League.build_league_table_from_matrix())
     st.pyplot(fig_winners, width='content')
 
+# ============== Generate League Table  =================
+fig_league_table = create_league_table(League.build_league_table_from_matrix())
 st.pyplot(fig_league_table, width='content')
 
-
-# page_bg_img = """
-# <style>
-# [data-TESTID="STMainBlockContainer"] {
-# background-color: #424141;
-# opacity: 0.8;
-# background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #e5e5f7 10px ), repeating-linear-gradient( #444cf755, #444cf7 );
-# }
-#  """
+# ================= Add Logo  ===========================
 st.sidebar.image('images/padel_logo_2.png', width=300)
