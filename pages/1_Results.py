@@ -57,7 +57,7 @@ tabs = st.tabs(tab_names)
 # Iterate through each tab and build content
 for tab, tab_content in zip(tabs, tab_contents):
     with tab:
-        st.header(tab_content['title'])
+        # st.header(tab_content['title'])
         st.write(tab_content['content'])
 
 st.sidebar.image('images/padel_logo_2.png', width=300)
