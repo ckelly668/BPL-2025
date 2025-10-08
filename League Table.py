@@ -4,7 +4,7 @@ import streamlit as st
 st.set_page_config(page_title="Belfast Padel League", 
                    layout="wide",
                    page_icon = ":tennis:",
-                   initial_sidebar_state= "collapsed")
+                   initial_sidebar_state= "expanded")
 
 # st.title("Padel League Table")
 # st.sidebar.success("Select a page above.")
