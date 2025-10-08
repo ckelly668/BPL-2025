@@ -3,7 +3,8 @@ import streamlit as st
 
 st.set_page_config(page_title="Belfast Padel League", 
                    layout="wide",
-                   page_icon = ":tennis:")
+                   page_icon = ":tennis:",
+                   initial_sidebar_state= "collapsed")
 
 # st.title("Padel League Table")
 # st.sidebar.success("Select a page above.")
@@ -93,5 +94,4 @@ st.pyplot(fig_league_table, width='content')
 # background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #e5e5f7 10px ), repeating-linear-gradient( #444cf755, #444cf7 );
 # }
 #  """
-
 st.sidebar.image('images/padel_logo_2.png', width=300)

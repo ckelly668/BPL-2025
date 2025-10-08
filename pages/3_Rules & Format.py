@@ -3,7 +3,8 @@ import streamlit as st
 def main():
     st.set_page_config(page_title="Belfast Padel League", 
                    layout="wide",
-                   page_icon = ":clipboard:")
+                   page_icon = ":clipboard:", 
+                   initial_sidebar_state= "collapsed")
     st.title("Padel League Rules")
 
     st.header("League Rules & Format")

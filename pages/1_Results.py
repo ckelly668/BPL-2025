@@ -6,7 +6,8 @@ from aesthetic_tables import create_weekly_schedule_table, create_weekly_results
 
 st.set_page_config(page_title="Belfast Padel League", 
                    layout="wide",
-                   page_icon = ":trophy:")
+                   page_icon = ":trophy:",
+                   initial_sidebar_state= "collapsed")
 
 
 st.title("Results")

@@ -7,7 +7,8 @@ from aesthetic_tables import create_league_table, create_weekly_schedule_table, 
 
 st.set_page_config(page_title="Belfast Padel League", 
                    layout="wide",
-                   page_icon = ":calendar:")
+                   page_icon = ":calendar:", 
+                   initial_sidebar_state= "collapsed")
 
 
 st.title("Schedule")
