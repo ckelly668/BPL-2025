@@ -123,7 +123,7 @@ def create_league_table(league_table):
 
     # print(league_table)
     # Import image
-    with cbook.get_sample_data("C:\\Users\\colmk\\Documents\\BPL 2025\\images\\padel_logo_2_small.png") as file:
+    with cbook.get_sample_data("images\\padel_logo_2_small.png") as file:
         im = image.imread(file)
     # Create Table
     fig, ax = plt.subplots(figsize=(21, league_table.shape[0]+1))
