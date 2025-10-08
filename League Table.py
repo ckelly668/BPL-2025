@@ -77,3 +77,15 @@ fig_league_table = create_league_table(League.build_league_table_from_matrix())
 
 
 st.pyplot(fig_league_table, width='content')
+
+
+# page_bg_img = """
+# <style>
+# [data-TESTID="STMainBlockContainer"] {
+# background-color: #424141;
+# opacity: 0.8;
+# background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #e5e5f7 10px ), repeating-linear-gradient( #444cf755, #444cf7 );
+# }
+#  """
+
+st.sidebar.image('images/padel_logo_2.png', width=300)
