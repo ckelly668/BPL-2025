@@ -35,7 +35,7 @@ league_init_date = "2025-10-07"
 # Get the number of weeks completed from user input as an integer
 
 if 'weeks_complete' not in st.session_state:
-    st.session_state['weeks_complete'] = 2
+    st.session_state['weeks_complete'] = 1
 
 weeks_complete = st.session_state['weeks_complete']
 
