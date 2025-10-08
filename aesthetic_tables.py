@@ -439,10 +439,12 @@ def create_winners_page(league_table):
     # print(winning_players)
     header_props = {'fontweight': 'bold', 'va': 'center', 'ha': 'center'}
     
-    fig.text(0.5, 0.7, "Padel League",fontsize=36, color=row_colors["top4"], **header_props)
-    fig.text(0.5, 0.58, "CHAMPIONS",fontsize=40, color=row_colors["top4"], **header_props)
-    fig.text(0.5, 0.45, f"{winning_team}",fontsize=30, color=row_colors["relegation"], **header_props)
-    fig.text(0.5, 0.35, f"{winning_players[0]} & {winning_players[1]}",fontsize=25, color=text_color, **header_props)
+    fig.text(0.5, 0.7, "2  0  2  5",fontsize=56, color=row_colors["top4"], **header_props)
+
+    fig.text(0.5, 0.6, "Padel League",fontsize=36, color=row_colors["top4"], **header_props)
+    fig.text(0.5, 0.48, "CHAMPIONS",fontsize=40, color=row_colors["top4"], **header_props)
+    fig.text(0.5, 0.35, f"{winning_team}",fontsize=30, color=row_colors["relegation"], **header_props)
+    fig.text(0.5, 0.25, f"{winning_players[0]} & {winning_players[1]}",fontsize=25, color=text_color, **header_props)
 
 
     # Include Watermark

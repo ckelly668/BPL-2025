@@ -76,6 +76,12 @@ from aesthetic_tables import create_league_table, create_winners_page
 fig_league_table = create_league_table(League.build_league_table_from_matrix())
 
 
+if weeks_complete == len(schedule):
+    # st.header("🏆 Final League Table 🏆")
+    # st.markdown("Congratulations to the winners!")
+    fig_winners = create_winners_page(League.build_league_table_from_matrix())
+    st.pyplot(fig_winners, width='content')
+
 st.pyplot(fig_league_table, width='content')
 
 
