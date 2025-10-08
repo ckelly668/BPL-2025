@@ -123,8 +123,8 @@ def create_league_table(league_table):
 
     # print(league_table)
     # Import image
-    with cbook.get_sample_data("images\\padel_logo_2_small.png") as file:
-        im = image.imread(file)
+    # with cbook.get_sample_data("images\\padel_logo_2_small.png") as file:
+    #     im = image.imread(file)
     # Create Table
     fig, ax = plt.subplots(figsize=(21, league_table.shape[0]+1))
 
@@ -415,8 +415,8 @@ def create_winners_page(league_table):
 
 
    # Import image
-    with cbook.get_sample_data("C:\\Users\\colmk\\Documents\\Padel League\\images\\padel_logo_2.png") as file:
-        im = image.imread(file)
+    # with cbook.get_sample_data("C:\\Users\\colmk\\Documents\\Padel League\\images\\padel_logo_2.png") as file:
+    #     im = image.imread(file)
     # Setting font for text rendering to "DejaVu Sans" and adjust the figure's bounding box to be "tight."
     plt.rcParams["font.family"] = ["DejaVu Sans"]
     # plt.rcParams["savefig.bbox"] = "tight"
@@ -447,8 +447,8 @@ def create_winners_page(league_table):
 
     # Include Watermark
         # Include Watermark 
-    fig.figimage(im, 5, -10, zorder=3, alpha=1)
-    fig.figimage(im, 1055, -10, zorder=3, alpha=1)
+    # fig.figimage(im, 5, -10, zorder=3, alpha=1)
+    # fig.figimage(im, 1055, -10, zorder=3, alpha=1)
     return fig
 
 # fig.savefig("Images/league_table_New_New.png", facecolor=ax.get_facecolor(), dpi=200)
