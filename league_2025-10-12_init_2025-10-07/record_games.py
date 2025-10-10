@@ -1,6 +1,6 @@
 # Week 1
 if 0 < weeks_complete:
-    # League.record_match("That's A Paddlin'", "The Receptionists", [(4 ,2 ), (2 ,4 ), (4 , 1)])
+    League.record_match("That's A Paddlin'", "The Receptionists", [(4 ,2 ), (2 ,4 ), (4 , 2)])
     League.record_match("Player? I hardly know her", "The Binge Drinkers", [(4 ,0 ), (4 ,2 ), (4 , 0)])
     League.record_match("Cheaper by the Counsin'", "Rose and Crown Padel Club", [(4 ,2 ), (2 ,4 ), (4 , 1)])
     League.record_match("Armaghgeddon", "Slim Reapers", [(3 ,5 ), (0 ,4 ), (5 , 3)])
