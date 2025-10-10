@@ -14,7 +14,7 @@ st.set_page_config(page_title="Belfast Padel League",
 
 #  =========== Set Number of Weeks Played ==============
 if 'weeks_complete' not in st.session_state:
-    st.session_state['weeks_complete'] = 2
+    st.session_state['weeks_complete'] = 1
 
 weeks_complete = st.session_state['weeks_complete']
 #  ====================================================
