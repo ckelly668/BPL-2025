@@ -8,7 +8,7 @@ if 0 < weeks_complete:
 # Week 2
 if 1 < weeks_complete:
     # League.record_match("Sets in the City", "The Receptionists", [(4 ,2 ), (2 ,4 ), (4 , 1)])
-    # League.record_match("That's A Paddlin'", "Rose and Crown Padel Club", [(4 ,2 ), (2 ,4 ), (4 , 1)])
+    League.record_match("That's A Paddlin'", "Rose and Crown Padel Club", [(2 ,4 ), (1 ,4 ), (0 , 4)])
     # League.record_match("Player? I hardly know her", "Slim Reapers", [(4 ,2 ), (2 ,4 ), (4 , 1)])
     # League.record_match("Cheaper by the Cousin'", "Armaghgeddon", [(4 ,2 ), (2 ,4 ), (4 , 1)])
     pass
