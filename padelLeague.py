@@ -138,6 +138,7 @@ class padelLeague():
         # Record the match in wins matrix
         self.sets_score_matrix.loc[team1, team2] = self.parse_set_totals(set_scores)
         self.sets_score_matrix.loc[team2, team1] = (self.sets_score_matrix.loc[team1, team2][1], self.sets_score_matrix.loc[team1, team2][0])
+        # print(self.sets_score_matrix)
 
     def build_league_table_from_matrix(self, points_per_win=3):
         """
@@ -219,7 +220,7 @@ class padelLeague():
         # print("\n--- League Table ---")
         # print(table.to_string(index=False))
         table = table.drop(columns=["set_diff", "game_diff"])
-
+        # print(results_matrix)
         return table
   
     # Weekly Schudule Table
@@ -285,9 +286,4 @@ class padelLeague():
             game_rows.append([winner, winner_players, set_score_str, games_score_str, loser_players, loser])
         rows = game_rows + bye_rows
         df = pd.DataFrame(rows, columns=["Winner", "Winner Players", "Set Score", "Game Score", "Loser Players", "Loser"])
-
         return df
-    
-
-
-

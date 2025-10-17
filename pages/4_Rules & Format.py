@@ -1,4 +1,7 @@
 import streamlit as st
+from session_module import init_session
+# ============== Initalise Session ====================
+init_session()
 
 def main():
     st.set_page_config(page_title="Belfast Padel League", 

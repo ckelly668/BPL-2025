@@ -1,6 +1,7 @@
 import streamlit as st
 # from image_loader import render_image
 from aesthetic_tables import  create_weekly_schedule_table
+from session_module import init_session
 
 # =========== Streamlit Page Configuration ===========
 st.set_page_config(page_title="Belfast Padel League", 
@@ -9,6 +10,9 @@ st.set_page_config(page_title="Belfast Padel League",
                    initial_sidebar_state= "expanded")
 
 st.title("Schedule")
+
+# ============== Initalise Session ====================
+init_session()
 
 # ============== Schedule Tabs ====================
 # Create tabs dynamically based on weeks completed

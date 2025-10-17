@@ -86,12 +86,12 @@ week_range = range(1, len(schedule) + 1)
 lines = []
 for week_num in week_range:
     lines.append(f"# Week {week_num}")
-    lines.append(f"if {week_num-1} < weeks_complete:")
+    lines.append(f"if {week_num-1} < st.session_state.weeks_complete:")
     for match in schedule[week_num - 1]:
         if "BYE" in match:
             continue
         team1, team2 = match
-        lines.append(f'    League.record_match("{team1}", "{team2}", [(4 ,2 ), (2 ,4 ), (4 , 1)])')
+        lines.append(f'   st.session_state.League.record_match("{team1}", "{team2}", [(4 ,2 ), (2 ,4 ), (4 , 1)])')
     lines.append("")  # Blank line between weeks
 output = "\n".join(lines)
 pyperclip.copy("")

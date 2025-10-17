@@ -405,6 +405,136 @@ def create_weekly_schedule_table(League, week):
 
     return fig
 
+def create_head_to_head_table(head_to_head_table):
+    global row_colors, bg_color, text_color, col_defs
+
+    # Define column definitions for creating the table with specific properties.
+    teams  = head_to_head_table.columns.tolist()    
+    col_defs = ([ColumnDefinition(
+                name="index",
+                title="                   Team B\n              vs          \n Team A           ",
+                textprops={"ha": "right", "weight": "bold"},
+                width=5.2,
+            ),
+            ColumnDefinition(
+                name=teams[0],
+                title="Sets \nin the \nCity \n ",
+                textprops={"ha": "center", "weight": "bold"},
+                width = 2.7,
+            ),
+            ColumnDefinition(
+                name=teams[1],
+                title="That's \nA \nPaddlin' \n ",
+                textprops={"ha": "center", "weight": "bold"},
+                width= 2.7,
+            ),
+            ColumnDefinition(
+                name=teams[2],
+                title="Player? \nI Hardly \nKnow Her \n ",
+                textprops={"ha": "center", "weight": "bold"},
+                width= 2.7,
+            ),
+            ColumnDefinition(
+                name=teams[3],
+                title="Cheaper \nby the \nCousin' \n ",
+                textprops={"ha": "center", "weight": "bold"},
+                width= 2.7,
+            ),
+            ColumnDefinition(
+                name=teams[4],
+                title="Armaghgeddon \n ",
+                textprops={"ha": "center", "weight": "bold"},
+                width= 2.7,
+            ),
+            ColumnDefinition(
+                name=teams[5],
+                title="Slim \n Reapers \n ",
+                width= 2.7,
+                textprops={"ha": "center", "weight": "bold"},
+            ),
+            ColumnDefinition(
+                name=teams[6],
+                title="Rose and \nCrown \n Padel Club \n ",
+                width=2.7,
+                textprops={"ha": "center", "weight": "bold"},
+                # group="Sets",
+            ),
+            ColumnDefinition(
+                name=teams[7],
+                title="The Binge \n Drinkers \n ",
+                width= 2.7,
+                textprops={"ha": "center", "weight": "bold"},
+            ),
+            ColumnDefinition(
+                name=teams[8],
+                title="The \n Receptionists \n ",
+                width=3,
+                textprops={"ha": "center", "weight": "bold"},
+            )])
+  
+    # Setting font for text rendering to "DejaVu Sans" and adjust the figure's bounding box to be "tight."
+    plt.rcParams["font.family"] = ["DejaVu Sans"]
+    # plt.rcParams["savefig.bbox"] = "tight"
+    plt.rcParams["text.color"] = text_color
+    # plt.rcParams["font.family"] = "Roboto"
+
+    # Build the league table from your results matrix
+    # league_table = build_league_table_from_matrix(results_matrix, points_per_win=3)
+    # head_to_head_table = head_to_head_table.set_index("Team A")
+
+    # print(league_table)
+    # Import image
+    # with cbook.get_sample_data("images\\padel_logo_2_small.png") as file:
+    #     im = image.imread(file)
+    # Create Table
+    fig, ax = plt.subplots(figsize=(30, head_to_head_table.shape[0]+1))
+
+    fig.set_facecolor(bg_color)
+    ax.set_facecolor(bg_color)
+
+    table = Table(
+        head_to_head_table,
+        column_definitions=col_defs,
+        row_dividers=True,
+        col_label_divider=True,
+        footer_divider=True,
+        # index_col="Team",
+        columns=head_to_head_table.columns,
+        odd_row_color=row_colors["even"],
+        # header_divider_kw={"color": logo_yellow, "lw": 2},
+        footer_divider_kw={"color": bg_color, "lw": 2},
+        row_divider_kw={"color": bg_color, "lw": 5},
+        column_border_kw={"color": bg_color, "lw": 2},
+        textprops={"fontsize": 16, "ha": "center", "fontname": "DejaVu Sans"},
+    )
+    
+
+    for i in range(0,len(table.rows)):
+        for j in range(1, len(table.columns)):
+            if len(table.cells[i, j].text.get_text()) > 1:
+                if int(table.cells[i, j].text.get_text()[1]) > int(table.cells[i, j].text.get_text()[4]):
+                    table.cells[i, j].rectangle_patch.set_color("green")
+                else: 
+                    table.cells[i, j].rectangle_patch.set_color("red")
+
+
+    # Adding the bold header as a text annotation using \n to create a new line
+    header_text = "\n Head-to-Head\n\n\n"
+
+    header_props = {'fontsize': 22, 
+                    'fontweight': 'bold',
+                    'va': 'center',
+                    'ha': 'center',
+                    'color': row_colors["relegation"]}
+    # Adjusting the y-coordinate to bring the header closer to the table
+    plt.text(0.5, 0.91, header_text, transform=fig.transFigure, **header_props)
+
+    # Include Watermark 
+    # fig.figimage(im, 250, 755, zorder=3, alpha=1)
+    # fig.figimage(im, 1250, 755, zorder=3, alpha=1)
+
+    return fig
+
 def create_winners_page(league_table):
     global row_colors, bg_color, text_color, col_defs
 
