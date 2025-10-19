@@ -17,9 +17,10 @@ init_session()
 # ============== Schedule Tabs ====================
 # Create tabs dynamically based on weeks completed
 tab_contents = []
-for week in range(1, 9 + 1):
+for week in range(1, len(st.session_state.League.teams) + 1):
     tab_contents.append({
-        'title': f'Week {week}',
+        'title': f'Week {week}{" \N{check mark}" if week <= st.session_state.weeks_complete else ""}',
+
         'content': create_weekly_schedule_table(st.session_state.League, week=week)
     })
 
