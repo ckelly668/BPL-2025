@@ -19,7 +19,7 @@ init_session()
 tab_contents = []
 for week in range(1, len(st.session_state.League.teams) + 1):
     tab_contents.append({
-        'title': f'Week {week}{" \N{check mark}" if week < st.session_state.weeks_complete else ""}',
+        'title': f'Week {week}{" \N{check mark}" if week < st.session_state.weeks_complete +1 else ""}',
 
         'content': create_weekly_schedule_table(st.session_state.League, week=week)
     })
