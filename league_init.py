@@ -11,12 +11,12 @@ import random
 # === League Parameters ===
 # Teams and players 
 teams_and_players = {
-    "Sets in the City": ['Joe', 'Callum'], 
+    "Sets in the City": ['Joe', 'Callum'],
     "That's A Paddlin'": ['David C', 'Garbhan'],
     "Player? I hardly know her": ['Odhran', 'Lee'],
     "Cheaper by the Counsin'": ['Luke', 'Colm'],
     "Armaghgeddon": ['Michael', 'Curtis'],
-    "Slim Reapers": ['Eamonn', 'Conor'],
+    "Slim Reapers": ['Eamonn', 'Conor'], 
     "Rose and Crown Padel Club": ['Jack', 'Cahal'],
     "The Binge Drinkers": ['David T', 'James'],
     "The Receptionists": ['Victoria', 'Sarah'],

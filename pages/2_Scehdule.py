@@ -9,7 +9,7 @@ st.set_page_config(page_title="Belfast Padel League",
                    page_icon = ":calendar:", 
                    initial_sidebar_state= "expanded")
 
-st.title("Schedule")
+st.title("Remaining Weeks Schedule")
 
 # ============== Initalise Session ====================
 init_session()
@@ -17,7 +17,7 @@ init_session()
 # ============== Schedule Tabs ====================
 # Create tabs dynamically based on weeks completed
 tab_contents = []
-for week in range(1, len(st.session_state.League.teams) + 1):
+for week in range(st.session_state.weeks_complete+1, len(st.session_state.League.teams) + 1):
     tab_contents.append({
         'title': f'Week {week}',#{" \N{check mark}" if week < st.session_state.weeks_complete +1 else ""}',
 
