@@ -25,7 +25,7 @@ if 3 < st.session_state.weeks_complete:
     # st.session_state.League.record_match("Sets in the City", "Rose and Crown Padel Club", [(4 ,2 ), (4 ,3 ), (3 , 4)])
     st.session_state.League.record_match("The Binge Drinkers", "Slim Reapers", [(1 ,4 ), (1 ,4 ), (1 , 4)])
     st.session_state.League.record_match("The Receptionists", "Armaghgeddon", [(3 ,5 ), (2 ,4 ), (1 , 4)])
-    st.session_state.League.record_match("That's A Paddlin'", "Player? I hardly know her", [(4 ,2 ), (2 ,4 ), (4 , 1)])
+    st.session_state.League.record_match("That's A Paddlin'", "Player? I hardly know her", [(2 ,4 ), (2 ,4 ), (4 , 1)])
 
 # Week 5
 if 4 < st.session_state.weeks_complete:
