@@ -5,7 +5,8 @@ import matplotlib
 import matplotlib.pyplot as plt
 import matplotlib.cbook as cbook
 import matplotlib.image as image
-import numpy as np
+import matplotlib.lines as mlines
+
 import pandas as pd
 from matplotlib.colors import LinearSegmentedColormap
 from PIL import Image
@@ -148,21 +149,41 @@ def create_league_table(league_table):
     )
     
     num_teams = league_table.shape[0]
-    for idx in [0]:
-        table.rows[idx].set_facecolor(row_colors["top4"])
-    if num_teams > 6:    
-        for idx in [1]:
-            table.rows[idx].set_facecolor(row_colors["top6"])
+    league_split = True
+
+    if league_split:
             
-        for idx in [num_teams-2]:
+        for idx in [0,1,2,3,4]:
+            table.rows[idx].set_facecolor(row_colors["top4"])
+        for idx in [5,6,7,8]:
             table.rows[idx].set_facecolor(row_colors["playoffs"])
+
+        cup_teams = mlines.Line2D([], [], color=row_colors["top4"], marker='s', linestyle='None',
+                            markersize=15, label='Cup Teams')
+        shield_teams = mlines.Line2D([], [], color=row_colors["playoffs"], marker='s', linestyle='None',
+                            markersize=15, label='Shield Teams')
+
+        legend=plt.legend(handles=[cup_teams, shield_teams], facecolor='white',
+                    framealpha=1, loc='upper left', bbox_to_anchor=(0,0.97), fontsize=14, 
+                    title="League Playoff Split", title_fontsize=16, labelcolor='linecolor' )
+        plt.setp(legend.get_title(), color='black')
+  
+    else:
+        for idx in [0]:
+            table.rows[idx].set_facecolor(row_colors["top4"])
+        if num_teams > 6:    
+            for idx in [1]:
+                table.rows[idx].set_facecolor(row_colors["top6"])
+                
+            for idx in [num_teams-2]:
+                table.rows[idx].set_facecolor(row_colors["playoffs"])
+                table.rows[idx].set_fontcolor(row_colors["top4"])
+
+        for idx in [num_teams-1]:
+            table.rows[idx].set_facecolor(row_colors["relegation"])
             table.rows[idx].set_fontcolor(row_colors["top4"])
 
-    for idx in [num_teams-1]:
-        table.rows[idx].set_facecolor(row_colors["relegation"])
-        table.rows[idx].set_fontcolor(row_colors["top4"])
-
-    # table.ro[num_teams-1, :].text.set_color("#e0e8df")
+        table.ro[num_teams-1, :].text.set_color("#e0e8df")
 
     # Adding the bold header as a text annotation using \n to create a new line
     header_text = "\n 2025 Belfast Padel League\n\n League Table \n\n"
