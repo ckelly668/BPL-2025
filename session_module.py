@@ -7,7 +7,7 @@ def init_session():
     # if 'a' not in st.session_state:
     #     st.session_state.a = 1
     if 'weeks_complete' not in st.session_state:
-        st.session_state['weeks_complete'] =  3
+        st.session_state['weeks_complete'] =  7
         #  =========== Load Teams and Schedule ==============
         # Define Unique Identifiers for the league
         league_start_date = "2025-10-12"
