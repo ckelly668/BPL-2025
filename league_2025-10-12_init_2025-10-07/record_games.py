@@ -27,26 +27,26 @@ if 3 < st.session_state.weeks_complete:
     st.session_state.League.record_match("The Receptionists", "Armaghgeddon", [(3 ,5 ), (2 ,4 ), (1 , 4)])
     st.session_state.League.record_match("That's A Paddlin'", "Player? I hardly know her", [(2 ,4 ), (2 ,4 ), (4 , 1)])
 
-# Week 5
+# Week 5 9th November
 if 4 < st.session_state.weeks_complete:
     st.session_state.League.record_match("Sets in the City", "Slim Reapers", [(4 ,0 ), (4 ,0 ), (4 , 1)])
     st.session_state.League.record_match("Rose and Crown Padel Club", "Armaghgeddon", [(4 ,0 ), (4 ,1 ), (4 , 1)])
     st.session_state.League.record_match("The Binge Drinkers", "Cheaper by the Cousin'", [(1 ,4 ), (2 ,4 ), (0 , 4)])
     st.session_state.League.record_match("The Receptionists", "Player? I hardly know her", [(2 ,4 ), (1 ,4 ), (1 , 4)])
 
-# Week 6
+# Week 6 16th November
 if 5 < st.session_state.weeks_complete:
-    st.session_state.League.record_match("Sets in the City", "Armaghgeddon", [(4 ,2 ), (2 ,4 ), (4 , 1)])
-    st.session_state.League.record_match("Slim Reapers", "Cheaper by the Cousin'", [(4 ,2 ), (2 ,4 ), (4 , 1)])
-    st.session_state.League.record_match("Rose and Crown Padel Club", "Player? I hardly know her", [(4 ,2 ), (2 ,4 ), (4 , 1)])
-    st.session_state.League.record_match("The Binge Drinkers", "That's A Paddlin'", [(4 ,2 ), (2 ,4 ), (4 , 1)])
+    st.session_state.League.record_match("Sets in the City", "Armaghgeddon", [(4 ,1 ), (4 ,1 ), (4 , 0)]) # played
+    st.session_state.League.record_match("Slim Reapers", "Cheaper by the Cousin'", [(4 ,2 ), (2 ,4 ), (4 , 1)]) # Resched
+    st.session_state.League.record_match("Rose and Crown Padel Club", "Player? I hardly know her", [(4 ,2 ), (4 ,0 ), (4 , 0)]) # played
+    st.session_state.League.record_match("The Binge Drinkers", "That's A Paddlin'", [(2 ,4 ), (1 ,4 ), (4 , 2)])  # Played on 12th
 
-# Week 7
+# Week 7 23rd November
 if 6 < st.session_state.weeks_complete:
-    st.session_state.League.record_match("Sets in the City", "Cheaper by the Cousin'", [(4 ,2 ), (2 ,4 ), (4 , 1)])
-    st.session_state.League.record_match("Armaghgeddon", "Player? I hardly know her", [(4 ,2 ), (2 ,4 ), (4 , 1)])
-    st.session_state.League.record_match("Slim Reapers", "That's A Paddlin'", [(4 ,2 ), (2 ,4 ), (4 , 1)])
-    st.session_state.League.record_match("The Binge Drinkers", "The Receptionists", [(4 ,2 ), (2 ,4 ), (4 , 1)])
+    st.session_state.League.record_match("Sets in the City", "Cheaper by the Cousin'", [(4 ,1 ), (4 ,1 ), (4 , 0)]) # played
+    st.session_state.League.record_match("Armaghgeddon", "Player? I hardly know her", [(4 ,2 ), (1 ,4 ), (2 , 4)]) #played
+    st.session_state.League.record_match("Slim Reapers", "That's A Paddlin'", [(4 ,0 ), (4 ,1 ), (4 , 1)]) # played
+    st.session_state.League.record_match("The Binge Drinkers", "The Receptionists", [(5 ,4 ), (4 ,1 ), (1 , 4)]) # played
 
 # Week 8
 if 7 < st.session_state.weeks_complete:
