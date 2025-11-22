@@ -149,7 +149,7 @@ def create_league_table(league_table):
     )
     
     num_teams = league_table.shape[0]
-    league_split = False
+    league_split = True
 
     if league_split:
             
