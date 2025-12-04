@@ -57,8 +57,8 @@ if 7 < st.session_state.weeks_complete:
 
 # Week 9
 if 8 < st.session_state.weeks_complete:
-    st.session_state.League.record_match("Sets in the City", "That's A Paddlin'", [(4 ,2 ), (4 ,1 ), (4 , 1)])
+    # st.session_state.League.record_match("Sets in the City", "That's A Paddlin'", [(4 ,2 ), (4 ,1 ), (4 , 1)])
     st.session_state.League.record_match("Cheaper by the Cousin'", "The Receptionists", [(2 ,4 ), (0 ,4 ), (0 , 4)]) # played
-    st.session_state.League.record_match("Armaghgeddon", "The Binge Drinkers", [(4 ,2 ), (4 ,2 ), (4 , 3)])
+    # st.session_state.League.record_match("Armaghgeddon", "The Binge Drinkers", [(4 ,2 ), (4 ,2 ), (4 , 3)])
     st.session_state.League.record_match("Slim Reapers", "Rose and Crown Padel Club", [(1 ,4 ), (3 ,5 ), (2 , 4)]) #played
 
